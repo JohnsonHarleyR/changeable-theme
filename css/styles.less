@@ -1,0 +1,245 @@
+
+
+/* Global Variables */
+:root {
+  --font-family-title:  "Inter",sans-serif;
+  --font-family-gen: 'Open Sans',sans-serif;
+
+  --header-bg-color: rgba(2, 91, 135, 0.95);
+  --header-text-color: #C9F4F3;
+  --header-height: 10ch;
+  --header-rel-height: 10; // should be same as --header-height w/0 ch
+
+  --bg-color-primary: #fff;
+  --bg-color-secondary: #C9F4F3;
+
+  --logo-text-color: white;
+  --logo-icon-color: white;
+
+  --logo-inner-height: 13.24ch;
+  --logo-outer-padding: 2ch;
+  --logo-rel-height: 15.24; // should be same as logo height + padding w/0 ch
+  
+  --logo-header-scale: calc(var(--header-rel-height) / var(--logo-rel-height));
+}
+
+
+/* For Testing */
+.test {
+  color: inherit;
+  text-decoration: inherit;
+  background-color: black;
+}
+
+/* Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  font-size: 1.2em;
+}
+
+/* Down to Business */
+body {
+  background-color: var(--bg-color-primary);
+  font-family: var(--font-family-gen);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+
+  .title {
+    font-family: var(--font-family-title);
+  }
+
+  /* Top Navigation Bar */
+  header {
+    position: fixed;
+    background-color: var(--header-bg-color);
+    width: 100%;
+    height: var(--header-height);
+    color: var(--header-text-color);
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    .logo-area {
+      height: 100%;
+      color: inherit;
+      text-decoration: inherit;
+      border: 1px solid cyan;
+      display: flex;
+      align-items: center;
+
+      .designer {
+        transform: scale(var(--logo-header-scale));
+        border: 1px solid lawngreen;
+        top: calc(-1 * var(--header-height) / 2);
+
+        position: absolute;
+        bottom: calc(-1 * var(--header-height) / 2);
+      }
+
+      // .logo {
+      //   height: 100%;
+      // }
+    }
+
+  }
+
+  /* Page Content */
+  .content {
+    position: relative;
+    z-index: 1;
+    // border: 1px solid cyan;
+    margin-top: var(--header-height);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.section {
+      // border: 1px solid pink;
+      margin-left: 2vw;
+      margin-right: 2vw;
+    }
+
+    /* Bottom Footer */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 5ch;
+    }
+  }
+
+}
+
+/* Custom Logo */
+a.logo-area {
+  color: inherit;
+  text-decoration: inherit;
+
+  .designer {
+    display: flex;
+    justify-content: center;
+
+    .logo-design {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      //padding: var(--logo-outer-padding);
+
+      font-weight: bold;
+
+      .logo {
+        border: 1px solid pink;
+        height: var(--logo-inner-height);
+        width: 18ch;
+        //vertical-align: middle;
+        position: relative;
+
+        .wrap {
+          height: 15ch;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          .icon-text {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+
+            bottom: -.43ch;
+            font-size: 5ch;
+
+            color: var(--logo-icon-color);
+          }
+
+          .word-text {
+            position: absolute;
+            left: 0;
+            right: 0;
+
+            color: var(--logo-text-color);
+
+            &.top-txt {
+              top: -.15ch;
+            }
+
+            &.btm-txt {
+              bottom: 0;
+            }
+
+            font-family: 'Hey Betty';
+            font-size: 4ch;
+            font-weight: lighter;
+            vertical-align: middle;
+            box-sizing: border-box;
+          }
+        }
+
+        
+
+      }
+
+
+
+    }
+  }
+
+
+}
+
+
+
+
+/* Fonts */
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Regular'), url(../fonts/OpenSans/OpenSans-Regular.ttf);
+}
+
+
+/* Bottom Part of Logo */
+@font-face {
+  font-family: 'Righteous';
+  src: url(../fonts/Righteous/Righteous-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Bellota Text';
+  src: url(../fonts/BellotaText/BellotaText-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Bellota Text Bold';
+  src: url(../fonts/BellotaText/BellotaText-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url(../fonts/BebasNeue/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Baloo Da 2';
+  src: url(../fonts/BalooDa2/BalooDa2-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Hey Betty';
+  src: url(../fonts/HeyBetty/hey-betty.regular.ttf);
+}
